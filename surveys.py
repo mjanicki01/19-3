@@ -11,6 +11,10 @@ class Question:
         self.choices = choices
         self.allow_text = allow_text
 
+    def get_questions(self):
+        return self.question
+
+
 
 class Survey:
     """Questionnaire."""
@@ -21,6 +25,9 @@ class Survey:
         self.title = title
         self.instructions = instructions
         self.questions = questions
+
+    def get_questions(self):
+        return self.questions #this list is not callable. Why? How else to call list of self.questions?
 
 
 satisfaction_survey = Survey(

@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block title %}Survey Form{% endblock %}
+{% block content %}
+
+<h1>Survey</h1>
+    
+<form action="/story">
+    {% for q in questions %}
+      <p>{{ q }}:
+        <input name="{{ q }}">
+      </p>
+    {% endfor %}
+    <button>Submit</button>
+</form>
+
+
+{% endblock %}
