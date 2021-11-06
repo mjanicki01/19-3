@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block title %}Survey Form{% endblock %}
+{% block content %}
+
+<h1>Thank you!</h1>
+<p>Thank you for completing the <b>{{ title }}</b></p>
+
+
+<section class = "responses">
+<p>Here are your responses:</p>
+    <p> {% for r in responses %}
+        <br><b>{{ r.question }}</b>: {{ r.choice }}</br>
+    {% endfor %} </p>
+</section>
+
+
+{% endblock %}

@@ -6,3 +6,9 @@ body {
 #content {
     margin: 40px;
 }
+
+button {
+    padding: 8px;
+    border-width: 0px;
+    border-radius: 2px;
+}

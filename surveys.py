@@ -14,6 +14,11 @@ class Question:
     def get_questions(self):
         return self.question
 
+    def get_choices(self):
+        return self.choices
+
+    def get_text(self):
+        return self.allow_text
 
 
 class Survey:

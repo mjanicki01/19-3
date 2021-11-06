@@ -2,16 +2,12 @@
 {% block title %}Survey Form{% endblock %}
 {% block content %}
 
-<h1>Survey</h1>
-    
-<form action="/story">
-    {% for q in questions %}
-      <p>{{ q }}:
-        <input name="{{ q }}">
-      </p>
-    {% endfor %}
-    <button>Submit</button>
-</form>
+<h1>{{ title }}</h1>
+
+
+<p>{{ instructions }}</p>
+
+<a href="/questions/0"><button>Click here to start survey!</button></a>
 
 
 {% endblock %}
