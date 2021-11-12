@@ -12,6 +12,8 @@ debug = DebugToolbarExtension(app)
 responses = []
 questions = []
 
+title = satisfaction_survey.title
+instr = satisfaction_survey.instructions #abstract in dif file
 
 survey_q = satisfaction_survey.get_questions()
 for q in survey_q:
@@ -22,8 +24,7 @@ for q in survey_q:
 
 @app.route('/')
 def show_form():
-    title = satisfaction_survey.title
-    instr = satisfaction_survey.instructions
+    responses.clear()
     return render_template('home.html', questions = questions, title = title, instructions = instr)
 
 
@@ -36,8 +37,10 @@ def add_responses(index):
 
 @app.route('/questions/<int:index>', methods=["GET", "POST"])
 def load_question(index):
-    title = satisfaction_survey.title
-    instr = satisfaction_survey.instructions #Should these be global instead of repeating in multiple functions?
+    if index != len(responses):
+        flash(f"Out of sequence question")
+        return redirect(f"/questions/{len(responses)}")
+
     if index < len(questions):
         return render_template('question.html', index = index, question = questions[index], title = title)
     elif index == len(questions):
