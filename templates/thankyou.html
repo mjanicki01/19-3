@@ -7,8 +7,8 @@
 
 <section class = "responses">
 <p>Here are your responses:</p>
-    <p> {% for r in responses %}
-        <br><b>{{ r.question }}</b>: {{ r.choice }}</br>
+    <p> {% for key in session %}
+        <br><b>{{ key }}</b>: {{ session[key] }}</br>
     {% endfor %} </p>
 </section>
 
