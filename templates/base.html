@@ -10,9 +10,9 @@
 <body>
     
     <main id = "content">
-        {% with messages = get_flashed_messages(with_categories=true) %} <!-- this 'with' statement is specific to Jinja, not Python-->
+        {% with messages = get_flashed_messages(with_categories=true) %}
         {% if messages %}
-        <section class="messages"> <!-- using the with statement prevents this section from showing up needlessly-->
+        <section class="messages">
             {% for category,msg in messages %}
                 <p class="{{category}}">{{msg}}</p>
             {% endfor %}

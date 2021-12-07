@@ -24,7 +24,7 @@ for q in survey_q:
 @app.route('/')
 def show_form():
     session.clear()
-    return render_template('home.html', questions = questions, title = title, instructions = instr)
+    return render_template('index.html', questions = questions, title = title, instructions = instr)
 
 
 @app.route('/responses/new/<int:index>', methods=["POST"])

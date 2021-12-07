@@ -2,7 +2,7 @@ class Question:
     """Question on a questionnaire."""
 
     def __init__(self, question, choices=None, allow_text=False):
-        """Create question (assume Yes/No for choices."""
+        """Create question (assume Yes/No for choices) """
 
         if not choices:
             choices = ["Yes", "No"]
@@ -32,7 +32,7 @@ class Survey:
         self.questions = questions
 
     def get_questions(self):
-        return self.questions #this list is not callable. Why? How else to call list of self.questions?
+        return self.questions
 
 
 satisfaction_survey = Survey(
